@@ -3,7 +3,6 @@
  * Developer: Nisheed Jagadish
  * Repository: https://github.com/nisheed2440/sapientnitro.git
  * Framework: Twitter Bootstrap
- * CSS Framework: Less
  */
 ?>
 <!DOCTYPE html>
