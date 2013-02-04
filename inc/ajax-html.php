@@ -1,11 +1,22 @@
 <?php
-
+/**
+ * Function to return the carousel header.
+ * @param string $cid
+ * @return string
+ */
 function sn_carousel_header($cid){
 	
 	$html = '<div class="carousel-container">';
 	$html .= '<div id="carousel" class="'.$cid.'">';
 	return $html;
 }
+/**
+ * Function to output each featured item in the carousel.
+ * @param string $imgsrc
+ * @param string $imgalt
+ * @param string $testtext
+ * @return string
+ */
 function sn_corousel_body($imgsrc,$imgalt,$testtext)
 {
 	$html = '<div class="carousel-feature">';
@@ -16,6 +27,11 @@ function sn_corousel_body($imgsrc,$imgalt,$testtext)
 	return $html;
 }
 
+/**
+ * Function to return the featured items as html.
+ * @param array $items_array
+ * @return string
+ */
 function sn_corousel_body_loop($items_array){
 	
 	$html = '';
@@ -26,6 +42,10 @@ function sn_corousel_body_loop($items_array){
 	return $html;
 }
 
+/**
+ * Function to return the carousel footer.
+ * @return string
+ */
 function sn_carousel_footer(){
 	$html = '</div><!-- End #carousel -->';	
 	$html .= '<div id="carousel-left"><img src="img/arrow-left.png"/></div>';
@@ -34,6 +54,10 @@ function sn_carousel_footer(){
 	return $html;
 }
 
+/**
+ * Function to return the carousel meta.
+ * @return string
+ */
 function sn_carousel_meta($title,$desc)
 {
 	$html = '<div class="sn-carousel-meta">';
@@ -43,6 +67,7 @@ function sn_carousel_meta($title,$desc)
 	return $html;
 }
 
+//Output carousel html for Distinguished Technology Program
 function sn_dtp_html(){
 	
 	header('Content-Type: application/json');	
@@ -64,7 +89,7 @@ function sn_dtp_html(){
 	echo json_encode($chtml);
 	exit();		
 }
-
+//Domain Expertise Carousel
 function sn_de_html(){
 	header('Content-Type: application/json');	
 	$citems = array(
@@ -86,7 +111,7 @@ function sn_de_html(){
 	exit();	
 }
 
-
+//Mobile Solutions carousel
 function sn_ms_html(){
 	header('Content-Type: application/json');	
 	$citems = array(
@@ -108,7 +133,7 @@ function sn_ms_html(){
 	exit();
 }
 
-
+//HTML5 Canvas Carousel
 function sn_h5c_html(){
 	
 	header('Content-Type: application/json');	
@@ -136,7 +161,6 @@ $carousel_id = $_POST['id'];
 switch($carousel_id)
 {
 
-	
 	case 'de': sn_de_html();
 	break;
 
