@@ -26,10 +26,45 @@
  			</header>
  			<div class="container sn-fixed-middle">
  				 <div class="row-fluid">
-				    <div class="span4">
-				      <!--Sidebar content-->
-				    </div>
-				    <div class="span8">
+				    <div class="span3">
+				      <div class="sn-sidebar-widget">
+				      	<table class="table">
+				      		<thead>
+				      			<tr>
+				      				<th class="sn-tb-left">Name</th>
+				      				<th class="sn-tb-middle"><i class="icon-arrow-down sn-table-sort"></i>Age</th>
+				      			</tr>
+				      		</thead>
+				      		<tbody>
+				      			<tr>
+				      				<td class="sn-tb-left">Jennifer</td>
+				      				<td class="sn-tb-right">24</td>
+				      			</tr>
+				      			<tr>
+				      				<td class="sn-tb-left">Kate</td>
+				      				<td class="sn-tb-right">18</td>
+				      			</tr>
+				      			<tr>
+				      				<td class="sn-tb-left">David</td>
+				      				<td class="sn-tb-right">25</td>
+				      			</tr>
+				      			<tr>
+				      				<td class="sn-tb-left">Mark</td>
+				      				<td class="sn-tb-right">25</td>
+				      			</tr>
+				      		</tbody>
+				      	</table>
+				      </div><!-- End sidebar widget -->
+				      <div class="sn-sidebar-widget">
+						<ul class="nav nav-tabs nav-stacked">
+			              <li class="active"><a class="sn-carosel-nav" data-id="dtp" href="javascript:void(0);">Distinguished Technology Program</a></li>
+			              <li><a class="sn-carosel-nav" data-id="ms" href="javascript:void(0);">Mobile Solutions</a></li>
+			              <li><a class="sn-carosel-nav" data-id="h5c" href="javascript:void(0);">HTML5 Canvas</a></li>
+			              <li><a class="sn-carosel-nav" data-id="de" href="javascript:void(0);">Domain Expertise</a></li>
+			            </ul>
+				      </div>	
+				    </div><!-- End Span 3 -->
+				    <div class="span9">
 				      <!--Body content-->
 				    </div>
 				 </div>

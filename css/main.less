@@ -1,5 +1,6 @@
 @sapient-color: #F15D22;
-
+@sapient-border-color: #EEEEEE;
+@sapient-bg-color: #CCCCCC;
 .container-fluid{
 	
 	.sn-fixed-middle{
@@ -12,6 +13,44 @@
 			width:58px;
 			height:58px;
 			background:url('../img/sapient-logo.jpg') @sapient-color;
+			
+		}
+		.clearfix{
+				margin:10px auto;
+			}
+	}
+	
+	.span3{
+		.sn-sidebar-widget{
+			width:100%;
+		}
+	}
+}
+
+
+
+
+table{
+	&.table{
+		border:1px solid @sapient-border-color;
+		thead{
+			tr{
+				background-color:@sapient-bg-color;
+				th{
+					&:first-child{
+						border-right:1px solid  @sapient-border-color;
+					}
+				}
+			}
+		}
+		.sn-tb-left{
+			text-align:left;
+		}
+		.sn-tb-right{
+			text-align:right;
+		}
+		.sn-tb-middle{
+			text-align:center;
 		}
 	}
 }
