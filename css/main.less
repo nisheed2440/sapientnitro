@@ -27,6 +27,17 @@
 	.span3{
 		.sn-sidebar-widget{
 			width:100%;
+			ul {
+				&.sn-nav-tabs{
+					li{
+						&.active{
+							a{
+								color:@sapient-color;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -96,7 +107,7 @@ table{
 		
 		.sn-btn-submit{
 			float: right;
-			margin-right: 55px;
+			margin-right: 30px;
 		} 
 	}
 }
@@ -128,3 +139,27 @@ input[type="text"],
   		
   	}
   }
+
+
+  
+ a{
+  color: #333;
+ }
+ 
+ /** Error Styles **/
+ 
+ .sn-control-right{
+ 	float:right;
+ 	margin-top:-30px;
+ 	margin-right:30px;
+	&.error-block{
+		margin-top:-50px;
+	}
+ }
+ 
+ .error-text{
+	span.error-block{
+		font-size:11px;
+		color:red;
+	}
+ }
