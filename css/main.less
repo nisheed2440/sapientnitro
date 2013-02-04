@@ -1,6 +1,10 @@
+@import "elements.less";
+
 @sapient-color: #F15D22;
 @sapient-border-color: #EEEEEE;
 @sapient-bg-color: #CCCCCC;
+
+/** Container Styles **/
 .container-fluid{
 	
 	.sn-fixed-middle{
@@ -29,14 +33,17 @@
 
 
 
-
+/** Table Styles **/
 table{
 	&.table{
 		border:1px solid @sapient-border-color;
 		thead{
 			tr{
 				background-color:@sapient-bg-color;
+				height:30px;
 				th{
+					padding:0 8px;
+					vertical-align:middle;
 					&:first-child{
 						border-right:1px solid  @sapient-border-color;
 					}
@@ -54,3 +61,70 @@ table{
 		}
 	}
 }
+
+/** Carousel Styles **/
+
+.sn-carosel-wrapper{
+	margin-bottom:20px;
+	border:1px solid @sapient-border-color;
+	.sn-carousel-meta{
+		background-color:#9D9D9D;
+		padding:5px 10px 10px 10px;
+		h4{
+			color:#FFFFFF;
+		}
+		p{
+			color:#363636;
+		}	
+	}
+}
+
+/** Enroll form Styles **/
+.sn-enroll-form-wrapper{
+	.bordered();
+	.sn-enroll-form-header{
+		background-color:@sapient-bg-color;
+		margin-bottom:20px;
+		height:30px;
+		h5{
+			margin:0px;
+			padding:5px 20px;
+		}
+	}
+	.form-horizontal{
+		padding:10px;
+		
+		.sn-btn-submit{
+			float: right;
+			margin-right: 55px;
+		} 
+	}
+}
+
+
+/** Input Styles **/
+textarea, 
+input[type="text"],
+ input[type="password"], 
+ input[type="datetime"], 
+ input[type="datetime-local"], 
+ input[type="date"], 
+ input[type="month"], 
+ input[type="time"], 
+ input[type="week"], 
+ input[type="number"], 
+ input[type="email"], 
+ input[type="url"],
+  input[type="search"], 
+  input[type="tel"], 
+  input[type="color"], 
+  .uneditable-input {
+  .border-radius(0, 0, 0, 0);
+  width: 220px;
+  	&:focus{
+  		border-color:@sapient-color;
+  		.inner-shadow(0,1,1,0.1);
+  		.box-shadow(0 0 8px lighten(@sapient-color,20%));
+  		
+  	}
+  }
