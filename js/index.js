@@ -1,5 +1,7 @@
 var jq = jQuery;
 
+
+//The json data used for the sorting table
 var jsonData = [
 				{
 					age:24,
@@ -21,27 +23,14 @@ var jsonData = [
 
 jq(document).ready(function(){
 	
-	
-
-    jq("#but_prev").click(function () {
-      carousel.prev();
-    });
-    jq("#but_pause").click(function () {
-      carousel.pause();
-    });
-    jq("#but_start").click(function () {
-      carousel.start();
-    });
-    jq("#but_next").click(function () {
-      carousel.next();
-    });
-	
+	//On sidebar carousel nav click
 	jq('.sn-carosel-nav').click(function(){
 		jq('.sn-enroll-form-header h5').html('Enroll Now');
 		snMakeActive(this);
 		snGetCarouselHtml(this);
 	});
 	
+	//On enroll button click
 	jq('.sn-enroll-now-btn').live('click',function(){
 		var dummy_data = jq(this).attr('data-text');
 		jq('.sn-enroll-form-header h5').html('Enroll Now '+ dummy_data);
@@ -49,10 +38,7 @@ jq(document).ready(function(){
 		
 	});
 	
-	jq('.sn-carousel-init').trigger('click');
-	
-	snTableData(jsonData);
-	
+	//Bind validation with the enroll form
 	jq('#sn-enroll-form').validate({
 		errorClass:'error-block',
 		errorElement:'span',
@@ -63,6 +49,7 @@ jq(document).ready(function(){
 		}
 	});
 	
+	//sort table data and output new html
 	jq('.sn-sort-table-data').click(function(){
 		var sort_order = jq(this).attr('data-sort');
 		var sort_key	= jq(this).attr('data-key');
@@ -77,8 +64,14 @@ jq(document).ready(function(){
 		snTableData(sortedData);
 	});
 	
+	//Initialize the carousel.
+	jq('.sn-carousel-init').trigger('click');
+	
+	//Output intial table data
+	snTableData(jsonData);	
 });
 
+//Function to set an active class on the selected carousel nav link.
 function snMakeActive(snNavElement)
 {
 	if(!jq(snNavElement).parent().hasClass('active'))
@@ -89,6 +82,7 @@ function snMakeActive(snNavElement)
 	}
 }
 
+//Function to retrieve and display new carousel html via ajax.
 function snGetCarouselHtml(snNavElement)
 {
 	var id = jq(snNavElement).attr('data-id');
@@ -118,6 +112,7 @@ function snGetCarouselHtml(snNavElement)
 		});
 }
 
+//Function to output json data as table rows.
 function snTableData(jsontest){
 	
 	var tb_rows = '';
@@ -127,6 +122,7 @@ function snTableData(jsontest){
 	jq('.sn-sort-table tbody').empty().append(tb_rows);
 };
 
+//Function to sort json data either asc or desc.
 function snSortByKey(array, key , direction) {
     return array.sort(function(a, b) {
         var x = a[key]; var y = b[key];
