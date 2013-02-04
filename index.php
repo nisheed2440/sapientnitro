@@ -30,30 +30,14 @@
  				 <div class="row-fluid">
 				    <div class="span3">
 				      <div class="sn-sidebar-widget">
-				      	<table class="table">
+				      	<table class="table sn-sort-table">
 				      		<thead>
 				      			<tr>
-				      				<th class="sn-tb-left">Name</th>
-				      				<th class="sn-tb-middle"><i class="icon-arrow-down sn-table-sort"></i>Age</th>
+				      				<th class="sn-tb-left sn-sort-table-data"  data-sort="desc" data-key="name">Name</th>
+				      				<th class="sn-tb-right sn-sort-table-data" data-sort="desc" data-key="age">Age</th>
 				      			</tr>
 				      		</thead>
 				      		<tbody>
-				      			<tr>
-				      				<td class="sn-tb-left">Jennifer</td>
-				      				<td class="sn-tb-right">24</td>
-				      			</tr>
-				      			<tr>
-				      				<td class="sn-tb-left">Kate</td>
-				      				<td class="sn-tb-right">18</td>
-				      			</tr>
-				      			<tr>
-				      				<td class="sn-tb-left">David</td>
-				      				<td class="sn-tb-right">25</td>
-				      			</tr>
-				      			<tr>
-				      				<td class="sn-tb-left">Mark</td>
-				      				<td class="sn-tb-right">25</td>
-				      			</tr>
 				      		</tbody>
 				      	</table>
 				      </div><!-- End sidebar widget -->
@@ -84,9 +68,7 @@
 							      <div class="error-text"></div>
 							    </div>
 							  </div>
-							   
-							    
-							  
+
 							  <div class="control-group">
 							    <label class="control-label" for="inputEmail">Email</label>
 							    <div class="controls">

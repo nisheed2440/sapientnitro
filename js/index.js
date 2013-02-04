@@ -1,5 +1,23 @@
-
 var jq = jQuery;
+
+var jsonData = [
+				{
+					age:24,
+					name:'Jennifer'
+				},
+				{
+					age:18,
+					name:'Kate'
+				},
+				{
+					age:25,
+					name:'David'
+				},
+				{
+					age:25,
+					name:'Mark'
+				},
+];
 
 jq(document).ready(function(){
 	
@@ -28,9 +46,12 @@ jq(document).ready(function(){
 		var dummy_data = jq(this).attr('data-text');
 		jq('.sn-enroll-form-header h5').html('Enroll Now '+ dummy_data);
 		$('#inputFname').focus();
+		
 	});
 	
 	jq('.sn-carousel-init').trigger('click');
+	
+	snTableData(jsonData);
 	
 	jq('#sn-enroll-form').validate({
 		errorClass:'error-block',
@@ -40,6 +61,20 @@ jq(document).ready(function(){
 			element.parents('.controls').addClass('error-block');
 			
 		}
+	});
+	
+	jq('.sn-sort-table-data').click(function(){
+		var sort_order = jq(this).attr('data-sort');
+		var sort_key	= jq(this).attr('data-key');
+		var new_order 	= (sort_order == 'desc')?'asc':'desc';
+		var icon_dir 	= (sort_order == 'desc')?'down':'up';
+		jq(this).attr('data-sort',new_order);
+		jq(this).prevAll().find('i.icon').remove();
+		jq(this).nextAll().find('i.icon').remove();
+		jq(this).find('i.icon').remove();
+		jq(this).append('<i class="icon icon-arrow-'+ icon_dir +'"></i>');
+		var sortedData  =  snSortByKey(jsonData, sort_key , sort_order);
+		snTableData(sortedData);
 	});
 	
 });
@@ -81,4 +116,23 @@ function snGetCarouselHtml(snNavElement)
 		request.fail(function(jqXHR, textStatus) {
 		  alert( "Request failed: " + textStatus );
 		});
+}
+
+function snTableData(jsontest){
+	
+	var tb_rows = '';
+	jq.each(jsontest, function(i, item) {
+		tb_rows += '<tr><td class="sn-tb-left">'+ jsontest[i].name +'</td><td class="sn-tb-right">'+ jsontest[i].age +'</td></tr>';
+	    });
+	jq('.sn-sort-table tbody').empty().append(tb_rows);
+};
+
+function snSortByKey(array, key , direction) {
+    return array.sort(function(a, b) {
+        var x = a[key]; var y = b[key];
+        if(direction == 'desc')
+        	return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+        else
+        	return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
 }
